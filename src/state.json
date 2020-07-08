@@ -1,0 +1,34 @@
+{
+    "stocks": [
+        {
+            "name": "Apple Inc",
+            "symbol": "AAPL",
+            "weburl": "https://www.apple.com/",
+            "logo": "https://static.finnhub.io/logo/87cb30d8-80df-11ea-8951-00000000092a.png",
+            "price": "119.700",
+            "change": "1.1600",
+            "change percent": "0.9786%",
+            "marketCapitalization": 1415993
+        },
+        {
+            "name": "Apple Inc",
+            "symbol": "AAPL",
+            "weburl": "https://www.apple.com/",
+            "logo": "https://static.finnhub.io/logo/87cb30d8-80df-11ea-8951-00000000092a.png",
+            "price": "119.700",
+            "change": "1.1600",
+            "change percent": "0.9786%",
+            "marketCapitalization": 1415993
+        },
+        {
+            "name": "Apple Inc",
+            "symbol": "AAPL",
+            "weburl": "https://www.apple.com/",
+            "logo": "https://static.finnhub.io/logo/87cb30d8-80df-11ea-8951-00000000092a.png",
+            "price": "119.700",
+            "change": "1.1600",
+            "change percent": "0.9786%",
+            "marketCapitalization": 1415993
+        }
+    ]
+}

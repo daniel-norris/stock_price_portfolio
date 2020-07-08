@@ -1,14 +1,14 @@
 import React from "react";
 import "./App.css";
 
-import Stocks from "./components/Stocks/Stocks";
+import Stocks from "./components/Stocks/index";
 
 function App() {
     return (
         <div className="container">
             <header>Header</header>
             <section>Chart</section>
-            <Stocks></Stocks>
+            <Stocks />
             <footer>Footer</footer>
         </div>
     );

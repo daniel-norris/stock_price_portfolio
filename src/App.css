@@ -5,6 +5,10 @@ section {
     padding: 1rem;
 }
 
+body {
+    background: #eee;
+}
+
 .container {
     display: grid;
     grid-template-rows: 10vh 40vh 40vh 10vh;
