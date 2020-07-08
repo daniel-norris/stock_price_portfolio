@@ -31,7 +31,7 @@ class Stocks extends Component {
                         {stocks.map((stock, index) => (
                             <TableRow key={index}>
                                 <TableCell component="th" scope="row">
-                                    {stock["stock"]["01. symbol"]}
+                                    {stock.symbol}
                                 </TableCell>
                                 <TableCell align="right"></TableCell>
                                 <TableCell align="right"></TableCell>

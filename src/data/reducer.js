@@ -1,6 +1,14 @@
-const loadStock = (state, { stock }) => ({
+export const loadStock = (state, { stock }) => ({
     ...state,
-    stocks: [...state.stocks, { stock }],
+    stocks: [
+        ...state.stocks,
+        {
+            symbol: stock["01. symbol"],
+            price: stock["05. price"],
+            change: stock["09. change"],
+            changePercent: stock["10. change percent"],
+        },
+    ],
 });
 
 const reducer = (state, action) => {
