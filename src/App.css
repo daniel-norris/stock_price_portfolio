@@ -13,3 +13,8 @@ body {
     display: grid;
     grid-template-rows: 10vh 40vh 40vh 10vh;
 }
+
+.stocks {
+    width: 70vw;
+    margin: 0 auto;
+}

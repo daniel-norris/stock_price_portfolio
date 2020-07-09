@@ -1,4 +1,5 @@
 const initial = {
+    portfolio: [],
     stocks: [],
 };
 
