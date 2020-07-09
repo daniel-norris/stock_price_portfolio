@@ -1,4 +1,5 @@
 const initial = {
+    search: [],
     portfolio: ["AAPL", "IBM"],
     stocks: [],
 };
