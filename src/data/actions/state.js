@@ -4,3 +4,10 @@ export const loadStock = (data) => {
         stock: data,
     };
 };
+
+export const loadStockPrice = (data) => {
+    return {
+        type: "LOAD_STOCK_PRICE",
+        stock: data,
+    };
+};

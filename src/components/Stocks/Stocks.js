@@ -19,8 +19,6 @@ class Stocks extends Component {
     render() {
         const { stocks } = this.props;
 
-        console.log(stocks);
-
         return (
             <div className="stocks">
                 <Search />

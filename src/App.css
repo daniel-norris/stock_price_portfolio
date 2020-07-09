@@ -11,12 +11,17 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 10vh 40vh 40vh 10vh;
+    grid-template-rows: auto 1fr 1fr auto;
+}
+
+footer {
+    margin-top: 3rem;
 }
 
 .stocks {
     width: 70vw;
     margin: 0 auto;
+    height: 100%;
 }
 
 header,

@@ -1,6 +1,6 @@
 const initial = {
     search: [],
-    portfolio: ["AAPL", "IBM"],
+    portfolio: ["AAPL", "SPOT"],
     stocks: [],
 };
 
