@@ -7,9 +7,13 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
+import Search from "../Search/Search";
+
 class Stocks extends Component {
     componentDidMount() {
-        this.props.handleLoad();
+        this.props.portfolio.map((stock, index) => {
+            return this.props.handleLoad(stock);
+        });
     }
 
     render() {
@@ -17,12 +21,13 @@ class Stocks extends Component {
 
         return (
             <div className="stocks">
+                <Search />
+
                 <TableContainer component={Paper}>
                     <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell>Symbol</TableCell>
-                                <TableCell align="right">Name</TableCell>
                                 <TableCell align="right">Price</TableCell>
                                 <TableCell align="right">Change</TableCell>
                                 <TableCell align="right">% Change</TableCell>
@@ -34,7 +39,6 @@ class Stocks extends Component {
                                     <TableCell component="th" scope="row">
                                         {stock.symbol}
                                     </TableCell>
-                                    <TableCell align="right"></TableCell>
                                     <TableCell align="right">
                                         {stock.price}
                                     </TableCell>

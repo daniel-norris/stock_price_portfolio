@@ -1,5 +1,5 @@
 const initial = {
-    portfolio: [],
+    portfolio: ["AAPL", "IBM"],
     stocks: [],
 };
 

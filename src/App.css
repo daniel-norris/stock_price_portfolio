@@ -18,3 +18,8 @@ body {
     width: 70vw;
     margin: 0 auto;
 }
+
+header,
+footer {
+    background: lightblue;
+}

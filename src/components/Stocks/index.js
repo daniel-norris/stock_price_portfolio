@@ -6,11 +6,12 @@ import Stocks from "./Stocks";
 const mapStateToProps = (state) => {
     return {
         stocks: state.stocks,
+        portfolio: state.portfolio,
     };
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    handleLoad: () => dispatch(getStock()),
+    handleLoad: (stock) => dispatch(getStock(stock)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Stocks);

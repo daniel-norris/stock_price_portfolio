@@ -1,13 +1,12 @@
 import { loadStock } from "./state";
-// import below when we have API routes
-// import axios from '../../axios';
 
-import data from "../../stock.json";
+import companyInfoA from "../../json/companyInfoA.json";
+import companyInfoB from "../../json/companyInfoB.json";
 
-export const getStock = () => {
+export const getStock = (stock) => {
     return (dispatch) => {
         /**
-         * GET
+         * GET /query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo
          */
         dispatch(loadStock(data));
     };
