@@ -55,9 +55,17 @@ class Stocks extends Component {
                                     <TableCell align="right">
                                         {stock.name}
                                     </TableCell>
-                                    <TableCell align="right">?</TableCell>
-                                    <TableCell align="right">?</TableCell>
-                                    <TableCell align="right">?</TableCell>
+                                    <TableCell align="right">
+                                        {stock.price}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {stock.price - stock.previousPrice}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        {((stock.price - stock.previousPrice) /
+                                            stock.price) *
+                                            100}
+                                    </TableCell>
                                     <TableCell align="right">
                                         {stock.marketCap}
                                     </TableCell>

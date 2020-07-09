@@ -1,3 +1,12 @@
+export const isPreviousPrice = (state, symbol) => {
+    return state.stocks.some((stock) => stock.symbol === symbol);
+};
+
+export const checkPreviousPrice = (state, symbol) => {
+    let stock = state.stocks.find((stock) => stock.symbol === symbol);
+    return stock.price;
+};
+
 export const loadStock = (state, { stock }) => ({
     ...state,
     stocks: [
@@ -6,9 +15,10 @@ export const loadStock = (state, { stock }) => ({
             logo: stock.logo,
             symbol: stock.ticker,
             name: stock.name,
-            price: 0,
-            change: 0,
-            changePercent: 0,
+            price: stock.stockQuote.c,
+            previousPrice: isPreviousPrice(state, "AAPL")
+                ? checkPreviousPrice(state, "AAPL")
+                : 0,
             marketCap: stock.marketCapitalization,
         },
     ],
