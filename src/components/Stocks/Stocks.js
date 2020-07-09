@@ -19,6 +19,8 @@ class Stocks extends Component {
     render() {
         const { stocks } = this.props;
 
+        console.log(stocks);
+
         return (
             <div className="stocks">
                 <Search />
@@ -27,26 +29,39 @@ class Stocks extends Component {
                     <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>Symbol</TableCell>
+                                <TableCell></TableCell>
+                                <TableCell align="right">Symbol</TableCell>
+                                <TableCell align="right">Name</TableCell>
                                 <TableCell align="right">Price</TableCell>
                                 <TableCell align="right">Change</TableCell>
                                 <TableCell align="right">% Change</TableCell>
+                                <TableCell align="right">Market Cap.</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {stocks.map((stock, index) => (
                                 <TableRow key={index}>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell
+                                        component="th"
+                                        scope="row"
+                                        align="center"
+                                    >
+                                        <img
+                                            className="stock__img"
+                                            src={stock.logo}
+                                        />
+                                    </TableCell>
+                                    <TableCell align="right">
                                         {stock.symbol}
                                     </TableCell>
                                     <TableCell align="right">
-                                        {stock.price}
+                                        {stock.name}
                                     </TableCell>
+                                    <TableCell align="right">?</TableCell>
+                                    <TableCell align="right">?</TableCell>
+                                    <TableCell align="right">?</TableCell>
                                     <TableCell align="right">
-                                        {stock.change}
-                                    </TableCell>
-                                    <TableCell align="right">
-                                        {stock.changePercent}
+                                        {stock.marketCap}
                                     </TableCell>
                                 </TableRow>
                             ))}

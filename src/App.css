@@ -23,3 +23,8 @@ header,
 footer {
     background: lightblue;
 }
+
+.stock__img {
+    width: 1.5rem;
+    object-fit: contain;
+}

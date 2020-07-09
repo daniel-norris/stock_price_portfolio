@@ -8,6 +8,6 @@ export const getStock = (stock) => {
         /**
          * GET /query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo
          */
-        dispatch(loadStock(data));
+        dispatch(loadStock(companyInfoA));
     };
 };

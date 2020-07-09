@@ -3,10 +3,13 @@ export const loadStock = (state, { stock }) => ({
     stocks: [
         ...state.stocks,
         {
-            symbol: stock["01. symbol"],
-            price: stock["05. price"],
-            change: stock["09. change"],
-            changePercent: stock["10. change percent"],
+            logo: stock.logo,
+            symbol: stock.ticker,
+            name: stock.name,
+            price: 0,
+            change: 0,
+            changePercent: 0,
+            marketCap: stock.marketCapitalization,
         },
     ],
 });
