@@ -7,6 +7,7 @@ export const checkPreviousPrice = (state, symbol) => {
     return stock.price;
 };
 
+// needs to identify if stock already exists and if it does then overwrite existing price and previousPrice data
 export const loadStock = (state, { stock }) => ({
     ...state,
     stocks: [
@@ -24,10 +25,17 @@ export const loadStock = (state, { stock }) => ({
     ],
 });
 
+export const loadSymbols = (state, { symbols }) => ({
+    ...state,
+    symbols: symbols,
+});
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "LOAD_STOCK":
             return loadStock(state, action);
+        case "LOAD_SYMBOLS":
+            return loadSymbols(state, action);
         default:
             return state;
     }

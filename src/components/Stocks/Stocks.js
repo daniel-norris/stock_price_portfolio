@@ -7,10 +7,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-import Search from "../Search/Search";
+import Search from "../Search/index";
 
 class Stocks extends Component {
     componentDidMount() {
+        // load stock data
         this.props.portfolio.map((stock, index) => {
             return this.props.handleLoad(stock);
         });

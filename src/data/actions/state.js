@@ -1,7 +1,13 @@
 export const loadStock = (data) => {
-    console.log(data);
     return {
         type: "LOAD_STOCK",
         stock: data,
+    };
+};
+
+export const loadSymbols = (data) => {
+    return {
+        type: "LOAD_SYMBOLS",
+        symbols: data,
     };
 };
