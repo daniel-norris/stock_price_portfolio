@@ -32,7 +32,7 @@ export default class Tags extends React.Component {
     };
 
     handleSubmit() {
-        this.props.handleLoadStock();
+        this.props.handleLoadStock(this.state.stock.symbol);
     }
 
     render() {
@@ -72,7 +72,7 @@ export default class Tags extends React.Component {
                         Add
                     </Button>
                 </div>
-             
+
             </div>
         );
     }

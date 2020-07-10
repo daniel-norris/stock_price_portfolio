@@ -10,11 +10,17 @@ export const getStock = (stock) => {
         /**
          * GET /query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo
          */
-        let data =
-            stock === "AAPL"
-                ? { ...companyInfoA, stockQuote }
-                : { ...companyInfoB, stockQuote };
-        dispatch(loadStock(data));
+
+        console.log(stock);
+        switch (stock) {
+            case "AAPL":
+                return dispatch(loadStock({ ...companyInfoA, stockQuote }));
+            case "SPOT":
+                return dispatch(loadStock({ ...companyInfoB, stockQuote }));
+            default:
+                return dispatch(loadStock({ ...companyInfoA, stockQuote }));
+        }
+
     };
 };
 
