@@ -27,7 +27,7 @@ export const loadStock = (state, { stock }) => ({
 
 export const loadSymbols = (state, { symbols }) => ({
     ...state,
-    symbols: symbols,
+    search: [...symbols],
 });
 
 const reducer = (state, action) => {

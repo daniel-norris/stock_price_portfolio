@@ -1,5 +1,5 @@
 const initial = {
-    symbols: [],
+    search: [],
     portfolio: ["AAPL", "SPOT"],
     stocks: [],
 };
