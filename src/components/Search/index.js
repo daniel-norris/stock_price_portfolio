@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getSymbols } from "../../data/actions/api";
+import { getSymbols, getStock } from "../../data/actions/api";
 
 import Search from "./Search";
 
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    handleLoad: () => dispatch(getSymbols()),
+    handleLoadSymbols: () => dispatch(getSymbols()),
+    handleLoadStock: (stock) => dispatch(getStock(stock)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
