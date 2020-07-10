@@ -11,3 +11,10 @@ export const loadSymbols = (data) => {
         symbols: data,
     };
 };
+
+export const deleteStock = (data) => {
+    return {
+        type: "DELETE_STOCK",
+        stock: data,
+    };
+};

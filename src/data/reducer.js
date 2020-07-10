@@ -30,12 +30,19 @@ export const loadSymbols = (state, { symbols }) => ({
     search: [...symbols],
 });
 
+export const deleteStock = (state, { stock }) => ({
+    ...state,
+    stocks: [...stock]
+});
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "LOAD_STOCK":
             return loadStock(state, action);
         case "LOAD_SYMBOLS":
             return loadSymbols(state, action);
+        case "DELETE_STOCK":
+            return deleteStock(state, action);
         default:
             return state;
     }

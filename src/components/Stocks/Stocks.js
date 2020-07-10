@@ -6,15 +6,29 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 
 import Search from "../Search/index";
 
 class Stocks extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { stocks: [] };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
     componentDidMount() {
         // load stock data
         this.props.portfolio.map((stock, index) => {
             return this.props.handleLoad(stock);
         });
+    }
+
+    handleClick(i) {
+        console.log(this.props.stocks);
+        let stocks = [...this.props.stocks];
+        stocks.splice(i, 1);
+        this.props.handleDelete(stocks);
     }
 
     render() {
@@ -28,26 +42,24 @@ class Stocks extends Component {
                     <Table aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell></TableCell>
+                                <TableCell align="right"></TableCell>
                                 <TableCell align="right">Symbol</TableCell>
                                 <TableCell align="right">Name</TableCell>
                                 <TableCell align="right">Price</TableCell>
                                 <TableCell align="right">Change</TableCell>
                                 <TableCell align="right">% Change</TableCell>
                                 <TableCell align="right">Market Cap.</TableCell>
+                                <TableCell align="right"></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {stocks.map((stock, index) => (
-                                <TableRow key={index}>
-                                    <TableCell
-                                        component="th"
-                                        scope="row"
-                                        align="center"
-                                    >
+                            {stocks.map((stock, i) => (
+                                <TableRow key={i}>
+                                    <TableCell align="right">
                                         <img
                                             className="stock__img"
                                             src={stock.logo}
+                                            alt="stock logo"
                                         />
                                     </TableCell>
                                     <TableCell align="right">
@@ -69,6 +81,18 @@ class Stocks extends Component {
                                     </TableCell>
                                     <TableCell align="right">
                                         {stock.marketCap}
+                                    </TableCell>
+                                    <TableCell align="right">
+                                        <div>
+                                            <Button
+                                                style={{ margin: "0 0 .5rem 1rem" }}
+                                                variant="contained"
+                                                color="secondary"
+                                                onClick={(i) => this.handleClick(i)}
+                                            >
+                                                Del
+                                            </Button>
+                                        </div>
                                     </TableCell>
                                 </TableRow>
                             ))}
