@@ -4,11 +4,21 @@ import { getCandle } from "../../data/actions/api";
 import CandleStickChart from "./ChartComponent";
 
 const mapStateToProps = (state) => {
-    return {
-        t: state.t,
-        o: state.o,
-        h: state.h,
 
+    console.log(state.t);
+
+    return {
+        series: [{
+            data: [
+                [
+                    state.t.map((timescale) => timescale),
+                    state.o.map((open) => open),
+                    state.h.map((high) => high),
+                    state.l.map((low) => low),
+                    state.c.map((close) => close)
+                ],
+            ]
+        }]
     };
 };
 
