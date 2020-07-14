@@ -18,3 +18,14 @@ export const deleteStock = (data) => {
         stock: data,
     };
 };
+
+export const loadCandle = (data) => {
+    return {
+        type: "LOAD_CANDLE",
+        t: data.t,
+        o: data.o,
+        h: data.h,
+        l: data.l,
+        c: data.c,
+    };
+};

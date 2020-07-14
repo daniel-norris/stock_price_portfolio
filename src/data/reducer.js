@@ -35,6 +35,15 @@ export const deleteStock = (state, { stock }) => ({
     stocks: [...stock]
 });
 
+export const loadCandle = (state, { t, o, h, l, c }) => ({
+    ...state,
+    t: t,
+    o: o,
+    h: h,
+    l: l,
+    c: c,
+});
+
 const reducer = (state, action) => {
     switch (action.type) {
         case "LOAD_STOCK":
@@ -43,6 +52,8 @@ const reducer = (state, action) => {
             return loadSymbols(state, action);
         case "DELETE_STOCK":
             return deleteStock(state, action);
+        case "LOAD_CANDLE":
+            return loadCandle(state, action);
         default:
             return state;
     }

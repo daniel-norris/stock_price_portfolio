@@ -32,7 +32,10 @@ export default class Tags extends React.Component {
     };
 
     handleSubmit() {
-        this.props.handleLoadStock(this.state.stock.symbol);
+        const { stock } = this.state;
+        if (this.state.stock) {
+            this.props.handleLoadStock(stock.symbol);
+        }
     }
 
     render() {
@@ -41,7 +44,7 @@ export default class Tags extends React.Component {
         return (
             <div
                 style={{
-                    width: 150,
+                    width: 200,
                     display: "flex",
                     alignItems: "flex-end",
                 }}
