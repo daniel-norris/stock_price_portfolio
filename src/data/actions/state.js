@@ -20,12 +20,21 @@ export const deleteStock = (data) => {
 };
 
 export const loadCandle = (data) => {
+
+    let timestamps = data.t.map(() => data.t.splice(0, 1));
+    let open = data.o.map(() => data.o.splice(0, 1));
+    let high = data.h.map(() => data.h.splice(0, 1));
+    let low = data.l.map(() => data.l.splice(0, 1));
+    let current = data.c.map(() => data.c.splice(0, 1));
+
+    let result = timestamps.map((timestamp, index) => {
+        return timestamp.concat(open[index], high[index], low[index], current[index]);
+    })
+
+    console.log(result);
+
     return {
         type: "LOAD_CANDLE",
-        t: data.t,
-        o: data.o,
-        h: data.h,
-        l: data.l,
-        c: data.c,
+        candle: result,
     };
 };

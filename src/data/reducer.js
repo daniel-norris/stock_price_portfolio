@@ -35,13 +35,13 @@ export const deleteStock = (state, { stock }) => ({
     stocks: [...stock]
 });
 
-export const loadCandle = (state, { t, o, h, l, c }) => ({
+export const loadCandle = (state, { candle }) => ({
     ...state,
-    t: t,
-    o: o,
-    h: h,
-    l: l,
-    c: c,
+    series: [{
+        data: [
+            ...candle
+        ]
+    }]
 });
 
 const reducer = (state, action) => {
