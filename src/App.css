@@ -1,13 +1,10 @@
 header,
-footer,
-section {
+footer {
     border: 1px solid black;
     padding: 1rem;
 }
 
-body {
-    background: #eee;
-}
+
 
 .container {
     display: grid;
@@ -15,13 +12,19 @@ body {
 }
 
 footer {
-    margin-top: 3rem;
+
 }
 
 .stocks {
     width: 70vw;
     margin: 0 auto;
     height: 100%;
+
+}
+
+.stocks__container {
+    background-color: #eee;
+    padding-bottom: 2rem;
 }
 
 header,
@@ -32,4 +35,20 @@ footer {
 .stock__img {
     width: 1.5rem;
     object-fit: contain;
+}
+
+.chart {
+    width: 70vw;
+    margin: 0 auto;
+    background-color: #eee;
+}
+
+.chart__container {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);;
+    padding: 2rem 0;
+    z-index: 5;
+}
+
+.chartjs-render-monitor {
+    background-color: #fff;
 }

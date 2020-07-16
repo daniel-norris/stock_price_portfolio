@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { Line } from 'react-chartjs-2';
 
 class Chart extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     static defaultProps = {
         displayTitle: true,
@@ -19,15 +16,15 @@ class Chart extends Component {
 
     render() {
 
-        console.log(this.props.chartData);
-
         return (
             <div className="chart">
 
                 <Line
+
                     data={this.props.chartData}
                     height={500}
                     options={{
+
                         maintainAspectRatio: false,
                         title: {
                             display: this.props.displayTitle,
