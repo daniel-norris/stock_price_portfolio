@@ -11,7 +11,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 15vh 70vh 1fr auto;
+    grid-template-rows: 15vh auto 1fr auto;
 }
 
 footer {

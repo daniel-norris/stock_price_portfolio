@@ -35,13 +35,29 @@ export const deleteStock = (state, { stock }) => ({
     stocks: [...stock]
 });
 
-export const loadCandle = (state, { candle }) => ({
+export const loadApex = (state, { candle }) => ({
     ...state,
     series: [{
         data: [
             ...candle
         ]
     }]
+});
+
+export const loadCandle = (state, { timestamps, price }) => ({
+    ...state,
+    chartData: {
+        labels: timestamps,
+        datasets: [
+            {
+                label: 'Stock Price',
+                data: price,
+                backgroundColor: [
+                    "lightblue"
+                ]
+            }
+        ],
+    }
 });
 
 const reducer = (state, action) => {

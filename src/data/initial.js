@@ -2,7 +2,8 @@ const initial = {
     search: [],
     portfolio: ["AAPL", "SPOT"],
     stocks: [],
-    candle: [],
+    chartData: {},
+    selectedStock: "AAPL"
 };
 
 export default initial;

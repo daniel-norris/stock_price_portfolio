@@ -5,9 +5,9 @@ import CandleStickChart from "./ChartComponent";
 
 const mapStateToProps = (state) => {
 
-    console.log(state.series)
     return {
-        series: state.series
+        chartData: state.chartData,
+        selectedStock: state.selectedStock,
     };
 };
 

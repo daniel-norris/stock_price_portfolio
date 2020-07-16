@@ -1,35 +1,16 @@
-import React, { Component } from "react";
-import Chart from "react-apexcharts";
+import React, { Component } from 'react';
+import { Line } from 'react-chartjs-2';
 
-class CandleStickChart extends Component {
+class Chart extends Component {
     constructor(props) {
         super(props);
+    }
 
-        this.state = {
-            options: {
-                chart: {
-                    id: ""
-                }
-            },
-            series: [{
-                data: [
-                    [1538856000000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856100000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856200000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856300000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856400000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856500000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856600000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856700000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856800000, 6593.34, 6600, 6582.63, 6600],
-                    [1538856900000, 6593.34, 6600, 6582.63, 6600],
-                    [1538857000000, 6593.34, 6600, 6582.63, 6600],
-                    [1538857100000, 6593.34, 6600, 6582.63, 6600],
-                    [1538857200000, 6593.34, 6600, 6582.63, 6600],
-                    [1538857300000, 6595.16, 6604.76, 6590.73, 6593.86]
-                ]
-            }]
-        };
+    static defaultProps = {
+        displayTitle: true,
+        displayLegend: false,
+        legendPosition: 'top',
+        location: 'City'
     }
 
     componentDidMount() {
@@ -38,15 +19,55 @@ class CandleStickChart extends Component {
 
     render() {
 
+        console.log(this.props.chartData);
+
         return (
-            <Chart
-                options={this.state.options}
-                series={this.props.series}
-                type="candlestick"
-                width="800"
-            />
-        );
+            <div className="chart">
+
+                <Line
+                    data={this.props.chartData}
+                    height={500}
+                    options={{
+                        maintainAspectRatio: false,
+                        title: {
+                            display: this.props.displayTitle,
+                            text: 'Stock Prices for ' + this.props.selectedStock,
+                            fontSize: 25
+                        },
+                        legend: {
+                            display: this.props.displayLegend,
+                            position: this.props.legendPosition
+                        },
+                        layout: {
+                            padding: {
+                                left: 0,
+                                right: 0,
+                                top: 0,
+                                bottom: 0
+                            }
+                        },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    // Include a dollar sign in the ticks
+                                    callback: function (value, index, values) {
+                                        return '$' + value;
+                                    }
+                                }
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    maxTicksLimit: 20
+                                }
+                            }]
+                        }
+                    }}
+
+                />
+
+            </div>
+        )
     }
 }
 
-export default CandleStickChart;
+export default Chart;
