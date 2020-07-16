@@ -1,25 +1,13 @@
-header,
-footer {
-    border: 1px solid black;
-    padding: 1rem;
-}
-
-
 
 .container {
     display: grid;
-    grid-template-rows: 15vh auto 1fr auto;
-}
-
-footer {
-
+    grid-template-rows: 10vh auto 1fr 5vh;
 }
 
 .stocks {
     width: 70vw;
     margin: 0 auto;
     height: 100%;
-
 }
 
 .stocks__container {
@@ -27,9 +15,30 @@ footer {
     padding-bottom: 2rem;
 }
 
-header,
-footer {
+.footer__container {
     background: lightblue;
+}
+
+footer {
+    width: 70vw;
+    margin: 10px auto 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    /* border: 1px solid black; */
+}
+
+.header__container {
+    background: lightblue;
+}
+
+.header {
+    width: 70vw;
+    margin: 0 auto;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 .stock__img {

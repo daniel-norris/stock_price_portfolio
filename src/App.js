@@ -4,6 +4,7 @@ import "./App.css";
 import Stocks from "./components/Stocks/index";
 import CandleStickChart from "./components/ChartComponent/index";
 import Header from "./components/Header/Header.js";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
     return (
@@ -15,7 +16,7 @@ function App() {
                 </section>
             </div>
             <Stocks />
-            <footer>Footer</footer>
+            <Footer />
         </div>
     );
 }
